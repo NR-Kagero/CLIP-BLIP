@@ -8,4 +8,5 @@ clip = pipeline(
    device=0
 )
 labels = ["a photo of a cat", "a photo of a dog", "a photo of a car"]
-print(clip(r"C:\Users\Kagero\PycharmProjects\Multimodal\images.webp", candidate_labels=labels))
+
+print(clip(r".\images.webp", candidate_labels=labels))
