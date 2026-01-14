@@ -20,11 +20,11 @@ The project consists of two main Python scripts:
 * **Function:** Classifies an image into a set of provided text labels ("cat", "dog", "car") without requiring specific training on those categories.
 * **Method:** Uses the Hugging Face `pipeline` API for ease of use.
 
-### PLIP.py (Visual Question Answering)
+### BLIP.py (Visual Question Answering)
 * **Model:** Salesforce BLIP (`blip-vqa-base`)
 * **Function:** Answers natural language questions about the content of an input image.
 * **Method:** Uses `AutoProcessor` and `AutoModelForVisualQuestionAnswering` for generation.
-* **Note:** While the file is named `PLIP.py`, it implements the BLIP (Bootstrapping Language-Image Pre-training) architecture.
+* **Note:** While the file is named `BLIP.py`, it implements the BLIP (Bootstrapping Language-Image Pre-training) architecture.
 
 ---
 
@@ -43,7 +43,7 @@ The project consists of two main Python scripts:
 
 pip install torch transformers pillow requests accelerate
 
-*Note: The `accelerate` library is required for the `device_map="auto"` feature used in PLIP.py.*
+*Note: The `accelerate` library is required for the `device_map="auto"` feature used in BLIP.py.*
 
 ---
 
@@ -54,10 +54,10 @@ This script analyzes an image and assigns probabilities to the labels: "a photo 
 
 python CLIP.py
 
-### Running the VQA Model (PLIP)
+### Running the VQA Model (BLIP)
 This script takes an image and asks the specific question: "What is the weather in this image?" and prints the answer.
 
-python PLIP.py
+python BLIP.py
 
 ---
 
@@ -71,8 +71,8 @@ The file paths in the scripts are currently hardcoded to a specific local machin
    print(clip(r".......images.webp", ...))
 3. Replace the path with the location of your target image (e.g., `r"./my_image.jpg"`).
 
-### Updating PLIP.py
-1. Open `PLIP.py`.
+### Updating BLIP.py
+1. Open `BLIP.py`.
 2. Locate the line:
    image = Image.open(r"C........download.jpg")
 3. Replace the path with the location of your target image.
